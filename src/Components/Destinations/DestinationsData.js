@@ -1,14 +1,18 @@
 export default [
     {
-        id: 0,
+        CityName: "לונדון",
+        CityID: "0",
     },
     {
-        id: 1,
+        CityName: "ניו יורק",
+        CityID: "1",
     },
     {
-        id: 2,
+        CityName: "אלסקה",
+        CityID: "2",
     },
     {
-        id: 3,
+        CityName: "אילת",
+        CityID: "3",
     },
 ]

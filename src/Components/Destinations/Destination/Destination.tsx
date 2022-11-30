@@ -6,59 +6,45 @@ import * as S from './Destination.style';
 //interface
 import { IDestination } from "./IDestination"
 
+//icons and imgs
+import sun from "./Images/Sun.png"
+import cloud from "./Images/Cloud.png"
+import snow from "./Images/Snow.png"
 
-const Destinaton: FC<IDestination> = ( {CityName, CityID} ) => {
+const Destinaton: FC<IDestination> = ( {cityName, measureTemperture, feltTemperture, humidity, weatherDescription} ) => {
 
-    //TODO call api with city id to get the data insted of this hardcoded shit
-    const measureTemperture = 50
-    const feltTemperture = 48
-    const humidity = "14%"
-    const weatherImg = feltTemperture <= 20 
-                        ? "cold" 
-                        : feltTemperture > 30
-                            ? "hot" 
-                            : "middle"
+    const blocks = [
+
+        { category: "טמפ' נמדדת", value: measureTemperture + "°C"},
+        { category: "טמפ' מורגשת", value: feltTemperture + "°C"},
+        { category: "לחות", value: humidity + "%"}
+    ]
 
     return (
         <S.Container>
             <S.Header>
-                <S.City>{CityName}</S.City>
-                <img src="./Images/Sun.png" />
-                {/* TODO calc picture from temperture and MAKE IT WORK?!?!*/}
+                <S.City>{cityName}</S.City>
+                <S.Icon src={  feltTemperture <= 20 
+                        ? snow
+                        : feltTemperture >= 30
+                            ? sun 
+                            : cloud} />
             </S.Header>
-            <S.WeatherDescription>תאור מזג אוויר</S.WeatherDescription>
+            <S.WeatherDescription>{weatherDescription}</S.WeatherDescription>
             <S.Data>
-                {
-                    //TODO get the categorys and their value from a js file
-                }
-                <S.DataBlock>
-                    <S.DataCategory>
-                        טמפ' נמדדת
-                    </S.DataCategory>
-                    <S.DataValue>
-                        {measureTemperture}°C
-                    </S.DataValue>
-                </S.DataBlock>
-
                 
-                <S.DataBlock>
+            {
+                blocks.map(item => (
+                    <S.DataBlock>
                     <S.DataCategory>
-                        טמפ' מורגשת
+                        {item.category}
                     </S.DataCategory>
                     <S.DataValue>
-                        {feltTemperture}°C
+                        {item.value}
                     </S.DataValue>
                 </S.DataBlock>
-
-                
-                <S.DataBlock>
-                    <S.DataCategory>
-                        לחות
-                    </S.DataCategory>
-                    <S.DataValue>
-                        {humidity}
-                    </S.DataValue>
-                </S.DataBlock>
+                ))
+            }
             </S.Data>
         </S.Container>
     );

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import Data from './DestinationsData'
+import Data from './DestinationsData' //TODO change name
 
 //components
 import Destination from "./Destination/Destination"
@@ -8,20 +8,20 @@ import Destination from "./Destination/Destination"
 //style
 import * as S from './Destinations.style';
 
-console.log(Data)
 const Destinatons: FC = ( ) => {
 
-    const destinations = Data.map(item => {
-        return (
-            <Destination
-                CityName={item.CityName}
-                CityID={item.CityID}/>
-        )
-    })
     return (
         <S.Container>
             <S.Grid>
-                {destinations}
+    {        Data.map(item => (
+            <Destination
+                cityName={item.cityName}
+                measureTemperture={item.measureTemperture}
+                feltTemperture={item.feltTemperture}
+                humidity={item.humidity}
+                weatherDescription={item.weatherDescription}/>
+        
+    ))}
             </S.Grid>
         </S.Container>
     );

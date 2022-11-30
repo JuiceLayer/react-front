@@ -1,4 +1,7 @@
 export interface IDestination {
-    CityName: string;
-    CityID: string;
+    cityName: string;
+    measureTemperture: number,
+    feltTemperture: number,
+    humidity: number,
+    weatherDescription: string
 }

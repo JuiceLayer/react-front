@@ -1,18 +1,30 @@
 export default [
     {
-        CityName: "לונדון",
-        CityID: "0",
+        cityName: "לונדון",
+        measureTemperture: 29,
+        feltTemperture: 30,
+        humidity: 52,
+        weatherDescription: "שברי ענן"
     },
     {
-        CityName: "ניו יורק",
-        CityID: "1",
+        cityName: "ניו יורק",
+        measureTemperture: 26,
+        feltTemperture: 28,
+        humidity: 60,
+        weatherDescription: "אובך"
     },
     {
-        CityName: "אלסקה",
-        CityID: "2",
+        cityName: "אלסקה",
+        measureTemperture: 12,
+        feltTemperture: 13,
+        humidity: 90,
+        weatherDescription: "ngubi"
     },
     {
-        CityName: "אילת",
-        CityID: "3",
+        cityName: "אילת",
+        measureTemperture: 40,
+        feltTemperture: 39,
+        humidity: 18,
+        weatherDescription: "anhho cvhrho"
     },
 ]

@@ -20,7 +20,11 @@ export const City = styled("h1")({
     paddingInlineStart: "1.2rem"
 });
 
-//TODO image
+export const Icon = styled("img")({
+    width: "3rem",
+    height: "3rem",
+    margin: "0.6rem",
+});
 
 
 export const WeatherDescription = styled("p")({

@@ -4,7 +4,7 @@ import { FC } from 'react';
 import './App.css';
 
 //components
-import Header from "./Components/Header/Header"
+import Header from "./Components/Header/Header" //TODO change to nav bar
 import Destinations from "./Components/Destinations/Destinations"
 
 
